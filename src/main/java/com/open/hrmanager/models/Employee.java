@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -24,8 +26,8 @@ public class Employee {
     private String phoneNumber;
     private String address;
     private String salary;
-    private String startDate;
-    private String endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private boolean isActive;
     @ManyToOne(fetch = FetchType.LAZY)
     private Department department;
