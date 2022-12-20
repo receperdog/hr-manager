@@ -18,6 +18,13 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!-- ModelMapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!-- ModelMapper -->
         <!-- Swagger -->
         <dependency>
             <groupId>org.springdoc</groupId>
