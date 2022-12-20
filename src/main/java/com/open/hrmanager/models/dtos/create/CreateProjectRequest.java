@@ -3,6 +3,7 @@ package com.open.hrmanager.models.dtos.create;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 @AllArgsConstructor
@@ -15,5 +16,5 @@ public class CreateProjectRequest {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean status;
-    private Long departmentId;
+    private UUID departmentId;
 }
