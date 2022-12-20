@@ -28,7 +28,7 @@ public class Employee {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean isActive;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Department department;
     @Enumerated(EnumType.ORDINAL)
     private Role role;

@@ -3,7 +3,6 @@ package com.open.hrmanager.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -16,7 +15,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
-    @OneToMany(mappedBy = "department")
-    private Set<Employee> employees;
+    //@OneToMany(mappedBy = "department")
+    //private Set<Employee> employees;
 
 }
