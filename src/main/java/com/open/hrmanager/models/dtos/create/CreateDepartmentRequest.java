@@ -1,12 +1,11 @@
 package com.open.hrmanager.models.dtos.create;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class CreateDepartmentRequest {
     private String name;
 }
