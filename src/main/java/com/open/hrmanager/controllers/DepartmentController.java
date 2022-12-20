@@ -25,8 +25,8 @@ public class DepartmentController {
         return departmentService.getAllDepartments();
     }
     @GetMapping("/getbyid/{id}")
-    public void getDepartmentById(@PathVariable("id") UUID id) {
-        departmentService.getDepartmentById(id);
+    public Department getDepartmentById(@PathVariable("id") UUID id) {
+        return departmentService.getDepartmentById(id);
     }
     @PutMapping("/update")
     public void updateDepartment(@RequestBody UpdateDepartmentRequest updateDepartmentRequest) {
