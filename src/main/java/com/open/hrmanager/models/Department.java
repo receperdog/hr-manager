@@ -16,7 +16,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
-//    @OneToMany(mappedBy = "department")
-//    private Set<Employee> employees;
+    @OneToMany(mappedBy = "department")
+    private Set<Employee> employees;
 
 }
