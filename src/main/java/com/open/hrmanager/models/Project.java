@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Set;
-//
+import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -15,8 +15,8 @@ import java.util.Set;
 @Builder
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID projectId;
     private String name;
     private String description;
     private LocalDate startDate;
