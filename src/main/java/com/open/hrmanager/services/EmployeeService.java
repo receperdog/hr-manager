@@ -1,21 +1,23 @@
 package com.open.hrmanager.services;
 
 import com.open.hrmanager.models.Employee;
+import com.open.hrmanager.models.dtos.create.CreateEmployeeRequest;
+import com.open.hrmanager.models.dtos.update.UpdateEmployeeRequest;
 import com.open.hrmanager.repositories.EmployeeRepository;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Service
 @AllArgsConstructor
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
-
-    public void createEmployee(Employee employee) {
+    private final ModelMapper modelMapper;
+    public void createEmployee(CreateEmployeeRequest employeeRequest) {
+        Employee employee = modelMapper.map(employeeRequest, Employee.class);
         employeeRepository.save(employee);
     }
     public Employee getEmployeeById(UUID id) {
@@ -24,7 +26,8 @@ public class EmployeeService {
     public void deleteEmployee(UUID id) {
         employeeRepository.deleteById(id);
     }
-    public void updateEmployee(Employee employee) {
+    public void updateEmployee(UpdateEmployeeRequest updateEmployeeRequest) {
+        Employee employee = modelMapper.map(updateEmployeeRequest, Employee.class);
         employeeRepository.save(employee);
     }
     public Employee getEmployeeByName(String name) {

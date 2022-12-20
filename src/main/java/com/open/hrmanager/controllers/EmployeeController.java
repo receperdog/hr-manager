@@ -1,6 +1,8 @@
 package com.open.hrmanager.controllers;
 
 import com.open.hrmanager.models.Employee;
+import com.open.hrmanager.models.dtos.create.CreateEmployeeRequest;
+import com.open.hrmanager.models.dtos.update.UpdateEmployeeRequest;
 import com.open.hrmanager.services.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +17,7 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @PostMapping("/createemployee")
-    public void createEmployee(@RequestBody Employee employee) {
+    public void createEmployee(@RequestBody CreateEmployeeRequest employee) {
         employeeService.createEmployee(employee);
     }
     @GetMapping("/getall")
@@ -35,7 +37,7 @@ public class EmployeeController {
         return employeeService.getEmployeeById(id);
     }
     @PutMapping("/update")
-    public void updateEmployee(@RequestBody Employee employee) {
+    public void updateEmployee(@RequestBody UpdateEmployeeRequest employee) {
         employeeService.updateEmployee(employee);
     }
     @DeleteMapping("/delete/{id}")
