@@ -18,21 +18,19 @@ public class CreateEmployeeRequest {
     @NotNull
     @NotBlank
     private String name;
-    @NotNull
-    @NotBlank
-    private String surname;
-    private String email;
-    private String password;
-    private String phoneNumber;
-    private String address;
-    private String salary;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private boolean isActive;
+//    @NotNull
+//    @NotBlank
+//    private String surname;
+//    private String email;
+//    private String password;
+//    private String phoneNumber;
+//    private String address;
+//    private String salary;
+//    private LocalDate startDate;
+//    private LocalDate endDate;
+//    private boolean isActive;
     @Enumerated(EnumType.ORDINAL)
     private Role role;
     @NotNull
     private UUID departmentId;
-    @NotNull
-    private UUID projectId;
 }

@@ -15,8 +15,7 @@ public class HrManagerApplication {
     @Bean
     public ModelMapper getModelMapper(){
         ModelMapper modelMapper = new ModelMapper();
-        //modelMapper.getConfiguration().setMatchingStrategy
-        // (MatchingStrategies.STANDARD);
+        modelMapper.getConfiguration().setAmbiguityIgnored(true);
         return modelMapper;
     }
 

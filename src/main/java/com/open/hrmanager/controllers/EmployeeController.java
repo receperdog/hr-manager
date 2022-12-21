@@ -1,6 +1,7 @@
 package com.open.hrmanager.controllers;
 
 import com.open.hrmanager.models.Employee;
+import com.open.hrmanager.models.dtos.create.CreateEmployeeProjectRequest;
 import com.open.hrmanager.models.dtos.create.CreateEmployeeRequest;
 import com.open.hrmanager.models.dtos.update.UpdateEmployeeRequest;
 import com.open.hrmanager.services.EmployeeService;
@@ -20,18 +21,22 @@ public class EmployeeController {
     public Employee createEmployee(@RequestBody CreateEmployeeRequest employee) {
         return employeeService.createEmployee(employee);
     }
+    @PostMapping("/assignproject")
+    public void assignProject(@RequestBody CreateEmployeeProjectRequest createEmployeeProjectRequest) {
+        employeeService.assignProject(createEmployeeProjectRequest);
+    }
     @GetMapping("/getall")
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
-    @GetMapping("/getbyname/{name}")
-    public Employee getEmployeeByName(@PathVariable("name") String name) {
-        return employeeService.getEmployeeByName(name);
-    }
-    @GetMapping("/getbysurname/{surname}")
-    public Employee getEmployeeBySurname(@PathVariable("surname") String surname) {
-        return employeeService.getEmployeeBySurname(surname);
-    }
+//    @GetMapping("/getbyname/{name}")
+//    public Employee getEmployeeByName(@PathVariable("name") String name) {
+//        return employeeService.getEmployeeByName(name);
+//    }
+//    @GetMapping("/getbysurname/{surname}")
+//    public Employee getEmployeeBySurname(@PathVariable("surname") String surname) {
+//        return employeeService.getEmployeeBySurname(surname);
+//    }
     @GetMapping("/getbyid/{id}")
     public Employee getEmployeeById(@PathVariable("id") UUID id) {
         return employeeService.getEmployeeById(id);

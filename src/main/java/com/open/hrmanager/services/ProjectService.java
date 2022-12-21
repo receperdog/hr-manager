@@ -22,6 +22,9 @@ public class ProjectService {
     public List<Project> getAllProjects() {
         return projectRepository.findAll();
     }
+    public Project getProjectById(UUID id) {
+        return projectRepository.findById(id).orElse(null);
+    }
 
     public void deleteProject(UUID id) {
         projectRepository.deleteById(id);
