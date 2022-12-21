@@ -16,9 +16,9 @@ import java.util.UUID;
 public class DepartmentService {
     private final DepartmentRepository departmentRepository;
     private final ModelMapper modelMapper;
-    public void createDepartment(CreateDepartmentRequest createDepartmentRequest) {
+    public Department createDepartment(CreateDepartmentRequest createDepartmentRequest) {
         Department department = modelMapper.map(createDepartmentRequest, Department.class);
-        departmentRepository.save(department);
+        return departmentRepository.save(department);
     }
     public Department getDepartmentById(UUID id) {
         return departmentRepository.findById(id).orElse(null);

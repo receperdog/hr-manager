@@ -17,8 +17,8 @@ public class DepartmentController {
     private final DepartmentService departmentService;
 
     @PostMapping("/createdepartment")
-    public void createDepartment(@RequestBody CreateDepartmentRequest createDepartmentRequest) {
-        departmentService.createDepartment(createDepartmentRequest);
+    public Department createDepartment(@RequestBody CreateDepartmentRequest createDepartmentRequest) {
+        return departmentService.createDepartment(createDepartmentRequest);
     }
     @GetMapping("/getall")
     public List<Department> getAllDepartments() {

@@ -14,8 +14,8 @@ import java.util.List;
 public class ProjectController {
     private final ProjectService projectService;
     @PostMapping("/create")
-    public void createProject(@RequestBody CreateProjectRequest createProjectRequest) {
-        projectService.createProject(createProjectRequest);
+    public Project createProject(@RequestBody CreateProjectRequest createProjectRequest) {
+        return projectService.createProject(createProjectRequest);
     }
     @GetMapping("/all")
     public List<Project> getAll(){

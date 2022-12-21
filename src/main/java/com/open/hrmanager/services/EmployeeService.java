@@ -16,9 +16,9 @@ import java.util.UUID;
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final ModelMapper modelMapper;
-    public void createEmployee(CreateEmployeeRequest employeeRequest) {
+    public Employee createEmployee(CreateEmployeeRequest employeeRequest) {
         Employee employee = modelMapper.map(employeeRequest, Employee.class);
-        employeeRepository.save(employee);
+        return employeeRepository.save(employee);
     }
     public Employee getEmployeeById(UUID id) {
         return employeeRepository.findById(id).orElse(null);

@@ -15,9 +15,9 @@ import java.util.UUID;
 public class ProjectService {
     private final ProjectRepository projectRepository;
     private final ModelMapper modelMapper;
-    public void createProject(CreateProjectRequest createProjectRequest) {
+    public Project createProject(CreateProjectRequest createProjectRequest) {
         Project project = modelMapper.map(createProjectRequest, Project.class);
-        projectRepository.save(project);
+        return projectRepository.save(project);
     }
     public List<Project> getAllProjects() {
         return projectRepository.findAll();
