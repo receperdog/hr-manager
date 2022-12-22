@@ -21,15 +21,15 @@ public class Employee {
     private UUID employeeId;
 
     private String name;
-//    private String surname;
-//    private String email;
-//    private String password;
-//    private String phoneNumber;
-//    private String address;
-//    private String salary;
-//    private LocalDate startDate;
-//    private LocalDate endDate;
-//    private boolean isActive;
+    private String surname;
+    private String email;
+    private String password;
+    private String phoneNumber;
+    private String address;
+    private String salary;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private boolean isActive;
     @ManyToOne
     private Department department;
     @Enumerated(EnumType.ORDINAL)

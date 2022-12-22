@@ -17,6 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
+    private final DepartmentService departmentService;
     private final ProjectService projectService;
     private final ModelMapper modelMapper;
     public Employee createEmployee(CreateEmployeeRequest employeeRequest) {
@@ -39,12 +40,15 @@ public class EmployeeService {
         employee.getProjects().add(project);
         employeeRepository.save(employee);
     }
-//    public Employee getEmployeeByName(String name) {
-//        return employeeRepository.findEmployeeByName(name);
-//    }
-//    public Employee getEmployeeBySurname(String surname) {
-//        return employeeRepository.findEmployeeBySurname(surname);
-//    }
+    public Employee getEmployeeByName(String name) {
+        return employeeRepository.findEmployeeByName(name);
+    }
+    public Employee getEmployeeBySurname(String surname) {
+        return employeeRepository.findEmployeeBySurname(surname);
+    }
+    public List<Employee> getEmployeeByDepartment(String department) {
+        return employeeRepository.findEmployeesByDepartmentName(department);
+    }
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }

@@ -29,14 +29,18 @@ public class EmployeeController {
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
-//    @GetMapping("/getbyname/{name}")
-//    public Employee getEmployeeByName(@PathVariable("name") String name) {
-//        return employeeService.getEmployeeByName(name);
-//    }
-//    @GetMapping("/getbysurname/{surname}")
-//    public Employee getEmployeeBySurname(@PathVariable("surname") String surname) {
-//        return employeeService.getEmployeeBySurname(surname);
-//    }
+    @GetMapping("/getbyname/{name}")
+    public Employee getEmployeeByName(@PathVariable("name") String name) {
+        return employeeService.getEmployeeByName(name);
+    }
+    @GetMapping("/getbysurname/{surname}")
+    public Employee getEmployeeBySurname(@PathVariable("surname") String surname) {
+        return employeeService.getEmployeeBySurname(surname);
+    }
+    @GetMapping("/getbydepartment/{department}")
+    public List<Employee> getEmployeeByDepartment(@PathVariable("department") String department) {
+        return employeeService.getEmployeeByDepartment(department);
+    }
     @GetMapping("/getbyid/{id}")
     public Employee getEmployeeById(@PathVariable("id") UUID id) {
         return employeeService.getEmployeeById(id);
