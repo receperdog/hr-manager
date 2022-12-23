@@ -1,6 +1,6 @@
 package com.open.hrmanager.models.dtos.update;
 
-import com.open.hrmanager.models.enums.Role;
+import com.open.hrmanager.models.enums.RoleEnum;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
@@ -31,6 +31,5 @@ public class UpdateEmployeeRequest {
     private String endDate;
     private boolean isActive;
     private UUID departmentId;
-    @Enumerated(EnumType.ORDINAL)
-    private Role role;
+    private UUID roleId;
 }
