@@ -1,7 +1,6 @@
 package com.open.hrmanager.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.open.hrmanager.models.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
+@Table
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,6 +22,7 @@ public class Employee {
 
     private String name;
     private String surname;
+    @Column(unique = true)
     private String email;
     private String password;
     private String phoneNumber;
@@ -32,8 +33,6 @@ public class Employee {
     private boolean isActive;
     @ManyToOne
     private Department department;
-    @Enumerated(EnumType.ORDINAL)
-    private Role role;
     @ManyToMany
     @JsonIgnore
     @JoinTable(
@@ -41,7 +40,10 @@ public class Employee {
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "project_id")
     )
-
     private Set<Project> projects;
-
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "employee_roles",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 }

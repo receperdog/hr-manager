@@ -1,8 +1,5 @@
 package com.open.hrmanager.models.dtos.create;
 
-import com.open.hrmanager.models.enums.Role;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -29,8 +26,7 @@ public class CreateEmployeeRequest {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean isActive;
-    @Enumerated(EnumType.ORDINAL)
-    private Role role;
+    private UUID roleId;
     @NotNull
     private UUID departmentId;
 }

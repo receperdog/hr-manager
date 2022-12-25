@@ -1,6 +1,6 @@
 package com.open.hrmanager.models.enums;
 
-public enum Role {
+public enum RoleEnum {
     CEO,
     HR,
     EMPLOYEE,
